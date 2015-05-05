@@ -1,8 +1,8 @@
 class Connection
   include HTTParty
 
-  DEFAULT_API_VERSION = "2"
-  DEFAULT_BASE_URI    = "https://www.googleapis.com/civicinfo"
+  DEFAULT_API_VERSION = "0.4"
+  DEFAULT_BASE_URI    = "https://api.opencorporates.com"
   DEFAULT_QUERY       = {}
 
   base_uri DEFAULT_BASE_URI

@@ -1,23 +1,24 @@
 require "rubygems"
 require "httparty"
-require "pry-debugger"
 require "./connection"
 require "./client"
 require "./representation"
-require "./representations/election"
+require "./representations/company"
 require "./representer"
 
 ROUTES = {
-  elections: {
+  companies: {
     method: "get",
-    path: "/elections"
+    path: "/companies/search"
   }
 }
 
 connection = Connection.new
-connection.query(key: "<YOUR API KEY>")
+connection.query(jurisdiction_code: "gb", api_token: ENV['OPENC_API_TOKEN'])
 
 client   = Client.new(connection: connection, routes: ROUTES)
-response = Representation.new(client.elections)
+# Doesn't deal with nested hash for source atm
+result = client.companies["results"]["companies"].map {|x| x["company"].merge({"source" => nil}) }
+puts Representation.new(result.first).inspect
 
-binding.pry
+require 'pry'; binding.pry
