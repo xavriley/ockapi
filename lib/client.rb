@@ -1,8 +1,28 @@
+require 'uri'
+
 class Client
+  DEFAULT_ROUTES = {
+    companies: {
+      method: "get",
+      path: "/companies/search"
+    },
+    company: {
+      method: "get",
+      path: "/companies"
+    },
+    officers: {
+      method: "get",
+      path: "/officers/search"
+    },
+    officer: {
+      method: "get",
+      path: "/officers"
+    }
+  }
 
   def initialize(options={})
     @connection = options.fetch(:connection)
-    @routes     = options.fetch(:routes)
+    @routes     = options.fetch(:routes, DEFAULT_ROUTES)
   end
 
   def method_missing(method, *request_arguments)
@@ -24,7 +44,12 @@ class Client
     http_method   = route_map.fetch(:method)
     relative_path = route_map.fetch(:path)
 
+    path_args     = request_arguments.find {|x| x[:path_args] }
+    path_args     = Array((path_args || {})[:path_args]).join("/")
+
     # call the connection for records
-    connection.send(http_method, relative_path, *request_arguments)
+    # hacky hack hack hack for getting a relative file path
+    # OC API doesn't like trailing slashes
+    connection.send(http_method, File.join(relative_path, path_args).gsub(/\/\Z/, ''), *request_arguments)
   end
 end

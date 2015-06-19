@@ -1,0 +1,3 @@
+class Datum < Representation
+
+end

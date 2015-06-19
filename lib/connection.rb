@@ -1,3 +1,5 @@
+require 'json'
+
 class Connection
   include HTTParty
 
@@ -19,7 +21,9 @@ class Connection
 
   def get(relative_path, query={})
     relative_path = add_api_version(relative_path)
-    connection.get relative_path, query: @query.merge(query)
+    res = connection.get relative_path, query: @query.merge(query)
+
+    JSON.parse(res.body)
   end
 
   private

@@ -7,13 +7,33 @@ class Representer
   end
 
   def represent
-    collection.map { |item| definition_class.new(item, @parent) }
+    collection.map { |item|
+      if item.is_a? Array
+        item.map {|i|
+          if i.is_a? Hash
+            definition_class.new(i, @parent)
+          else
+            i
+          end
+        }
+      else
+        if(item.is_a?(Hash) and item.length == 1)
+          definition_class.new(item.values.first, @parent)
+        else
+          definition_class.new(item, @parent)
+        end
+      end
+    }.flatten
   end
 
   private
 
   def collection
-    @collection ||= Array(@value)
+    if @value.is_a? Hash
+      @collection ||= [].push @value
+    else
+      @collection ||= Array(@value)
+    end
   end
 
   def definition_class
@@ -23,6 +43,10 @@ class Representer
   end
 
   def class_string
-    @type.gsub(/s\z/,'').capitalize.gsub(/\s/, '')
+    if @type == "data"
+      "Datum"
+    else
+      @type.gsub(/s\z/,'').capitalize.gsub(/\s/, '')
+    end
   end
 end
