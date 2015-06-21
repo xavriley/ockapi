@@ -1,10 +1,10 @@
 class Officer < Representation
   def self.search(opts = {})
-    Search.new(opts).all.map(&:company).flatten.map(&:full!).uniq
+    Search.new(opts).all
   end
 
   def related_companies
-    self.class.search(:name => name, :date_of_birth => date_of_birth)
+    Search.new(:name => name, :date_of_birth => date_of_birth).all.map(&:company).flatten.compact.map(&:full!).uniq
   end
 
   def full!
@@ -12,11 +12,21 @@ class Officer < Representation
 
     # else returns a new object
     client   = Client.new(connection: Connection.new)
-    Officer.new(client.officer(path_args: [id])["results"]["officer"])
+    Officer.new(client.officer(path_args: [id])["results"]["officer"]) 
   end
 
   class Search
     class SearchError < StandardError; end
+    NULL_RESULT = {
+      "api_version" => "0.4",
+      "results" => {
+        "page" => 1,
+        "per_page" => 30,
+        "total_pages" => 0,
+        "total_count" => 0,
+        "officers" => []
+      }
+    }
 
     # [9] pry(main)> client.companies.keys
     # => ["api_version", "results"]
@@ -30,16 +40,16 @@ class Officer < Representation
 
       # Limit isn't part of the OC API
       @limit       = options.fetch(:limit, 100)
-
-      @connection  = Connection.new
     end
 
     def page(page_no = 1)
-      @connection.query(@query.merge(page: page_no))
-      client   = Client.new(connection: @connection)
-      res = client.officers
+      connection = Connection.new
+      client   = Client.new(connection: connection)
+      res = client.officers(@query.merge(page: page_no))
       if res["error"]
         raise SearchError.new(res["error"]["message"])
+        $stderr.puts "ERROR: #{@query.inspect}"
+        return NULL_RESULT
       else
         if page_no == 1
           $stderr.puts "#{@query.inspect}"

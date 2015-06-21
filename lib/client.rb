@@ -44,12 +44,12 @@ class Client
     http_method   = route_map.fetch(:method)
     relative_path = route_map.fetch(:path)
 
-    path_args     = request_arguments.find {|x| x[:path_args] }
-    path_args     = Array((path_args || {})[:path_args]).join("/")
+    path_args_orig     = request_arguments.find {|x| x[:path_args] }
+    path_args     = Array((path_args_orig || {})[:path_args]).join("/")
 
     # call the connection for records
     # hacky hack hack hack for getting a relative file path
     # OC API doesn't like trailing slashes
-    connection.send(http_method, File.join(relative_path, path_args).gsub(/\/\Z/, ''), *request_arguments)
+    connection.send(http_method, File.join(relative_path, path_args).gsub(/\/\Z/, ''), *(request_arguments - [path_args_orig]))
   end
 end

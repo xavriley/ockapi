@@ -5,23 +5,18 @@ class Connection
 
   DEFAULT_API_VERSION = "0.4"
   DEFAULT_BASE_URI    = "https://api.opencorporates.com"
-  DEFAULT_QUERY       = {}
+  DEFAULT_QUERY       = {:api_token => ENV['OPENC_API_TOKEN']}
 
   base_uri DEFAULT_BASE_URI
 
   def initialize(options={})
     @api_version = options.fetch(:api_version, DEFAULT_API_VERSION)
-    @query       = options.fetch(:query, DEFAULT_QUERY)
     @connection  = self.class
-  end
-
-  def query(params={})
-    @query.update(params)
   end
 
   def get(relative_path, query={})
     relative_path = add_api_version(relative_path)
-    res = connection.get relative_path, query: @query.merge(query)
+    res = connection.get relative_path, query: DEFAULT_QUERY.merge(query).reject {|k,v| v.blank? }
 
     JSON.parse(res.body)
   end

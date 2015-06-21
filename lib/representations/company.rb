@@ -1,4 +1,21 @@
 class Company < Representation
+  RELATED_OPTS = [:postcode, :officer, :industry_code]
+
+  def self.search(opts = {})
+    Search.new(opts).all
+  end
+
+  def self.find(jurisdiction_code, company_number)
+    # Call full! by default on single companies
+    Search.new({company_number: company_number, jurisdiction_code: jurisdiction_code}).find.full!
+  end
+
+  def extracted_postcode
+    registered_address_in_full.to_s.split(/[,\n]+/).map(&:strip).select {|line|
+      line[/\A[A-Z0-9]{2,4}\s[A-Z0-9]{2,4}\Z/]
+    }.first
+  end
+
   def industry_code_descriptions
     if industry_codes
       industry_codes.map {|code|
@@ -12,16 +29,31 @@ class Company < Representation
 
     # else returns a new object
     client   = Client.new(connection: Connection.new)
-    Company.new(client.company(path_args: [jurisdiction_code, company_number])["results"]["company"])
+    Company.new(client.company(path_args: [jurisdiction_code, company_number])["results"]["company"]) rescue self
   end
 
-  def self.search(opts = {})
-    Search.new(opts).page(1).first
-  end
+  def related_by(*opts)
+    # This is a hopelessly bad implementation
+    #
+    invalid_options = opts - RELATED_OPTS
+    raise "Invalid option for related_by: #{invalid_options}" if not invalid_options.empty?
 
-  def self.find(jurisdiction_code, company_number)
-    # Call full! by default on single companies
-    Search.new({company_number: company_number, jurisdiction_code: jurisdiction_code}).find.full!
+    output = {}
+    if opts.include? :postcode
+      output[:postcode] = Search.new(registered_address_in_full: (postcode || extracted_postcode)).all
+    end
+
+    if opts.include? :officer
+      output[:officer] = Array(officers).map {|o|
+        o.related_companies
+      }.flatten
+    end
+
+    if opts.include? :postcode and opts.include? :officer
+      output[:postcode] & output[:officer]
+    else
+      output.values.flatten
+    end
   end
 
   # Implement `uniq` on Company
@@ -65,14 +97,12 @@ class Company < Representation
 
       # Limit isn't part of the OC API
       @limit       = options.fetch(:limit, 100)
-
-      @connection  = Connection.new
     end
 
     def page(page_no = 1)
-      @connection.query(@query.merge(page: page_no))
-      client   = Client.new(connection: @connection)
-      res = client.companies
+      connection = Connection.new
+      client   = Client.new(connection: connection)
+      res = client.companies(@query.merge(page: page_no))
       if res["error"]
         raise SearchError.new(res["error"]["message"])
       else
@@ -86,6 +116,7 @@ class Company < Representation
 
     def find
       first_page = page
+      @query = nil
       Representation.new("companys" => first_page["results"]["companies"].map {|x| x["company"] }).companys.first
     end
 
@@ -112,7 +143,7 @@ class Company < Representation
           results << page(i)["results"]["companies"]
         end
       else
-        results = first_page
+        results = first_page["results"]["companies"]
       end
 
       Representation.new({"companys" => (results.flatten[0..@limit].map {|x| x["company"] }) }).companys
