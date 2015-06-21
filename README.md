@@ -1,10 +1,17 @@
-# Okapi - An Unofficial OpenCorporates Ruby Client
+# Ockapi - An Unofficial OpenCorporates Ruby Client
 
 ## Warning: Pre-pre-alpha. Almost nothing works.
 
 There is a lot of data on OpenCorporates. I found in my own projects that
 I was doing similar tasks over and over again so I've made a gem to make it
 easier to research companies and officers.
+
+## Why Ockapi?
+
+I wanted to call it [Okapi after the Congolese relative of the giraffe](https://en.wikipedia.org/?title=Okapi)
+but believe it or not, that gem name is taken. Thus Ockapi.
+
+## Getting started
 
 To start a session
 ```
@@ -17,7 +24,7 @@ $ OPENC_API_TOKEN="yourtokenhere" ruby example.rb
 That opens a Pry console. Take it for a spin.
 
 ```ruby
-# Search for groups
+# Search for several companies
 > Company.search(name: "Boots Propco", jurisdiction_code: "gb")
 Found 19 companies
 => [#<Company name="ALLIANCE BOOTS PROPCO A LLP", company_number="OC331120", jurisdiction_code="gb", incorporation_date="2007-09-05", dissolution_date=nil, company_type="Limited Liability Partnership", registry_url="http://data.companieshouse.gov.uk/doc/company/OC331120", branch_status=nil, inactive=false, current_status="Active", created_at="2010-10-21T14:14:35+00:00", updated_at="2015-06-06T13:32:36+00:00", retrieved_at="2015-06-01T00:00:00+00:00", opencorporates_url="https://opencorporates.com/companies/gb/OC331120", previous_names=[], source=[#<Representation publisher="UK Companies House", url="http://xmlgw.companieshouse.gov.uk/", terms="UK Crown Copyright", retrieved_at="2015-06-01T00:00:00+00:00">], registered_address_in_full="SEDLEY PLACE 4TH FLOOR, 361 OXFORD STREET, LONDON, W1C 2JL">,
@@ -49,6 +56,7 @@ ss=nil, registered_address_in_full="20-22 BEDFORD ROW, LONDON, WC1R 4JS", altern
 
 #### Technical
 - [x] Basic caching with HTTParty + CacheBar
+- [ ] Namespace everything to Ockapi
 - [ ] package and release gem
 - [ ] Add tests!
 - [ ] OCR filings with tesseract
