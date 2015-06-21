@@ -13,6 +13,14 @@ but believe it or not, that gem name is taken. Thus Ockapi.
 
 ## Getting started
 
+To take advantage of caching API queries, you'll need Redis installed and running.
+On a Mac its something like this:
+
+```
+$ brew install redis
+$ redis-server /usr/local/etc/redis.conf
+```
+
 To start a session
 ```
 $ git clone ...
