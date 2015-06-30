@@ -18,6 +18,10 @@ module Ockapi
     end
 
     def run
+      if ENV['OPENC_API_TOKEN'].nil?
+        $stderr.puts "WARNING: OpenCorporates API token not found. Some features will not work."
+        $stderr.puts "Please export the OPENC_API_TOKEN in your shell before starting ockapi"
+      end
       binding.pry
     end
 
