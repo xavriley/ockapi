@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.homepage      = "https://github.com/xavriley/ockapi"
 
   gem.files         = `git ls-files`.split($\)
-  gem.executables   = ["ockapi"]
+  gem.executables   = gem.files.grep(%r{^bin/}) { |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.name          = "ockapi"
   gem.require_paths = ["lib"]

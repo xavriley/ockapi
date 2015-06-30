@@ -1,6 +1,6 @@
 # Ockapi - An Unofficial OpenCorporates Ruby Client
 
-## Warning: Pre-pre-alpha. Almost nothing works.
+## Warning: Pre-pre-alpha. Don't use in production yet.
 
 There is a lot of data on OpenCorporates. I found in my own projects that
 I was doing similar tasks over and over again so I've made a gem to make it
@@ -25,8 +25,7 @@ To start a session
 ```
 $ git clone ...
 $ bundle install
-$ cd lib
-$ OPENC_API_TOKEN="yourtokenhere" ruby example.rb
+$ OPENC_API_TOKEN="yourtokenhere" ./bin/ockapi
 ```
 
 That opens a Pry console. Take it for a spin.
@@ -64,9 +63,10 @@ ss=nil, registered_address_in_full="20-22 BEDFORD ROW, LONDON, WC1R 4JS", altern
 
 #### Technical
 - [x] Basic caching with HTTParty + CacheBar
-- [ ] Namespace everything to Ockapi
-- [ ] package and release gem
+- [x] Namespace everything to Ockapi
+- [x] Package gem
 - [ ] Add tests!
+- [ ] Release gem
 - [ ] OCR filings with tesseract
 - [ ] Parallelize queries with Typhoeus [see here](https://github.com/xavriley/cosy-companies/blob/master/app.rb#L144)
 - [ ] Add parameters for cache control
