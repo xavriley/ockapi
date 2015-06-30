@@ -11,7 +11,7 @@ Gem::Specification.new do |gem|
   gem.files         = `git ls-files`.split($\)
   gem.executables   = ["ockapi"]
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
-  gem.name          = "zerp"
+  gem.name          = "ockapi"
   gem.require_paths = ["lib"]
   gem.version       = Ockapi::VERSION
 end
