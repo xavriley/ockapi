@@ -71,6 +71,7 @@ ss=nil, registered_address_in_full="20-22 BEDFORD ROW, LONDON, WC1R 4JS", altern
 - [ ] Parallelize queries with Typhoeus [see here](https://github.com/xavriley/cosy-companies/blob/master/app.rb#L144)
 - [ ] Add parameters for cache control
 - [ ] Add representation classes for other "objects"
+- [ ] Return results as ResultsSet object
 
 #### Practical
 - [x] Group on postcode
@@ -79,6 +80,7 @@ ss=nil, registered_address_in_full="20-22 BEDFORD ROW, LONDON, WC1R 4JS", altern
 - [ ] Retrieve filings from beta.companieshouse.gov.uk
 - [ ] Entity extraction on OCRed filings
 - [ ] Feedback on API usage limits
+- [ ] Add `to_csv` on ResultsSet objects - `CSV::Table.new(results_set.map {|x| CSV::Row.new(x.to_h.keys, x.to_h.values) }).to_csv`
 
 ## Credits
 
