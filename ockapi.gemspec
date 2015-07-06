@@ -13,5 +13,14 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.name          = "ockapi"
   gem.require_paths = ["lib"]
+
+  s.add_runtime_dependency "cachebar", ["~> 1.1.1"]
+  s.add_runtime_dependency "httparty", ["~> 0.8.3"]
+  s.add_runtime_dependency "pry", ["~> 0.10.1"]
+  s.add_runtime_dependency "redis", ["~> 3.2.1"]
+  s.add_runtime_dependency "redis-namespace", ["~> 1.5.2"]
+
+  s.add_development_dependency "rspec", ["~> 3.3.0"]
+
   gem.version       = Ockapi::VERSION
 end
