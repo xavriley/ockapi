@@ -18,13 +18,15 @@ module Ockapi
             end
           }
         else
-          if(item.is_a?(Hash) and item.length == 1)
+          if(item.is_a?(Hash) and item.length == 0)
+            nil
+          elsif(item.is_a?(Hash) and item.length == 1)
             definition_class.new(item.values.first, @parent)
           else
             definition_class.new(item, @parent)
           end
         end
-      }.flatten
+      }.flatten.compact
     end
 
     private

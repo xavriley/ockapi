@@ -65,22 +65,22 @@ ss=nil, registered_address_in_full="20-22 BEDFORD ROW, LONDON, WC1R 4JS", altern
 - [x] Basic caching with HTTParty + CacheBar
 - [x] Namespace everything to Ockapi
 - [x] Package gem
-- [ ] Add tests!
-- [ ] Release gem
-- [ ] OCR filings with tesseract
-- [ ] Parallelize queries with Typhoeus [see here](https://github.com/xavriley/cosy-companies/blob/master/app.rb#L144)
-- [ ] Add parameters for cache control
+- [x] Add tests!
 - [ ] Add representation classes for other "objects"
+- [ ] OCR filings with tesseract
+- [ ] Add parameters for cache control
 - [ ] Return results as ResultsSet object
+- [ ] Release gem
+- [ ] Parallelize queries with Typhoeus [see here](https://github.com/xavriley/cosy-companies/blob/master/app.rb#L144)
 
 #### Practical
 - [x] Group on postcode
 - [x] Group on officer
 - [ ] Group on industry codes
 - [ ] Retrieve filings from beta.companieshouse.gov.uk
-- [ ] Entity extraction on OCRed filings
 - [ ] Feedback on API usage limits
 - [ ] Add `to_csv` on ResultsSet objects - `CSV::Table.new(results_set.map {|x| CSV::Row.new(x.to_h.keys, x.to_h.values) }).to_csv`
+- [ ] Entity extraction on OCRed filings
 
 ## Credits
 

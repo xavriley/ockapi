@@ -6,7 +6,9 @@ describe Ockapi::Representer do
     {
       "id" => "1000",
       "name" => "Important Name",
-      "electionDay" => "2020-01-01"
+      "officers" => [{"officer" => {name: "John Smith", dob: "01/01/1900"}}],
+      "filings" => [],
+      "source" => {}
     }
   end
   let(:parent) { nil }
@@ -30,6 +32,18 @@ describe Ockapi::Representer do
     context "when representation exists" do
       it { expect(subject.length).to be 1 }
       it { expect(subject.first).to be_a_kind_of Ockapi::Company }
+
+      it "handles nested representations" do
+        expect(subject.first.officers.first).to be_a_kind_of Officer
+      end
+
+      it "handles empty collections" do
+        expect(subject.first.filings).to be_empty
+      end
+
+      it "handles empty objects" do
+        expect(subject.first.source).to be_empty
+      end
     end
 
     context "when representation doesn't exist" do
