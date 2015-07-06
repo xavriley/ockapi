@@ -40,7 +40,7 @@ module Ockapi
     def definition_class
       Ockapi.const_get(class_string)
     rescue NameError
-      Ockapi.const_set(class_string, Representation)
+      Object.const_set(class_string, Representation)
     end
 
     def class_string
