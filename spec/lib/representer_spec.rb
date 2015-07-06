@@ -1,7 +1,7 @@
 require "spec_helper"
 
 describe Ockapi::Representer do
-  let(:type) { "elections" }
+  let(:type) { "companys" }
   let(:value) do
     {
       "id" => "1000",
