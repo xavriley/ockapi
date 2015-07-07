@@ -8,7 +8,8 @@ describe Ockapi::Representer do
       "name" => "Important Name",
       "officers" => [{"officer" => {name: "John Smith", dob: "01/01/1900"}}],
       "filings" => [],
-      "source" => {}
+      "source" => {},
+      "sic_codes" => ["123456"]
     }
   end
   let(:parent) { nil }
@@ -35,6 +36,10 @@ describe Ockapi::Representer do
 
       it "handles nested representations" do
         expect(subject.first.officers.first).to be_a_kind_of Officer
+      end
+
+      it "handles lists of values" do
+        expect(subject.first.sic_codes.first).to eq("123456")
       end
 
       it "handles empty collections" do
