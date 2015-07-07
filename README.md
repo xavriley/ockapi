@@ -25,7 +25,7 @@ To start a session
 ```
 $ git clone ...
 $ bundle install
-$ OPENC_API_TOKEN="yourtokenhere" ./bin/ockapi
+$ COMPANIES_HOUSE_TOKEN="yourCHtokenhere" OPENC_API_TOKEN="yourtokenhere" ./bin/ockapi
 ```
 
 That opens a Pry console. Take it for a spin.
@@ -57,6 +57,28 @@ ss=nil, registered_address_in_full="20-22 BEDFORD ROW, LONDON, WC1R 4JS", altern
 # Companies that this officer is also a director of
 > sidefloor.officers.first.related_companies.length
 => 94
+
+# You need to have pdfimages (brew install poppler) and tesseract installed
+# for this next one to work, and sign up for a Companies House Beta API key
+#
+# Get the text of their latest annual return
+> sidefloor.filings.sort_by {|x| Date.parse(x.date) }.reverse.detect {|x| x.title[/annual return/i] }.get_companies_house_doc
+I, [2015-07-07T09:26:57.407564 #56783]  INFO -- : [HTTPCache]: Storing good response in cache for https://api.companieshouse.gov.uk/company/06087729/filing-history - "62e6f115dac9d14f09933b8c54fc28fe"
+I, [2015-07-07T09:26:57.409218 #56783]  INFO -- : [HTTPCache]: Caching off for https://document-api.companieshouse.gov.uk/document/20RR4YVpG05LHXqBkNOQEBN3_S1Ij1Wg40VANvV1znU - "941f145143a3a3c06f832e94810edaf5"
+I, [2015-07-07T09:26:57.654937 #56783]  INFO -- : [HTTPCache]: Caching off for https://document-api.companieshouse.gov.uk/document/20RR4YVpG05LHXqBkNOQEBN3_S1Ij1Wg40VANvV1znU/content - "84fbad264983fd4576049426a181f282"
+Syntax Error (3365): Command token too long
+Syntax Error (3493): Command token too long
+Syntax Error (3621): Command token too long
+Warning in pixReadMemPnm: work-around: writing to a temp file
+Warning in pixReadMemPnm: work-around: writing to a temp file
+Warning in pixReadMemPnm: work-around: writing to a temp file
+Warning in pixReadMemPnm: work-around: writing to a temp file
+Warning in pixReadMemPnm: work-around: writing to a temp file
+=> ["Companies House\n\nARO\n\n1 (61)\n\n \n\nAnnual Return\n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\nReceived for ﬁling in Electronic Format on the: 06/08/2014 X3DP36ET\nCompany Name: Sidefloor Limited\nCompany Number: 06087729\n\nDate of this return:\n\nSIC codes:\n\nCompany Type:\n\nSituation of Registered\nOﬁice:\n\n06/08/2014\n\n93199\n\nPrivate company limited by shares\n\n20—22 BEDFORD ROW\nLONDON\n\nUNITED KINGDOM\nWC 1R 4J S\n\nOfﬁcers of the company\n\nElectronically Filed Document for Company Number: 06087729\n\nPage: 1\n\n",
+ "Company Secretary 1\n\nType: Corporate\nName: JORDAN COSEC LIMITED\nRegistered or\nprincipal address: 21 ST THOMAS STREET\nBRISTOL\nUNITED KINGDOM\nBS1 (U S\n\nEuropean Economic Area (EEA) Company\n\nRegister Location: ENGLAND & WALES\nRegistration Number: 06412777\n\nElectronically Filed Document for Company Number: 06087729 Page:2\n\n",
+ "Company Director 1\n\nType: Person\n\nFull forename(s) : MR AYOMIDE\n\nSurname: OTUBANJO\n\nFormer names:\n\nService Address: 85—87 BAYHAM STREET\nLONDON\nUNITED KINGDOM\nNW 1 0AG\n\nCountry/State Usually Resident: UNITED KINGDOM\n\nDate of Birth: 06/08/1963 Nationality: BRITISH\nOccupation: CHARTERED CERTIFIED\nACCOUNTANT\n\nElectronically Filed Document for Company Number: 06087729 Page:3\n\n",
+ "Statement of Capital (Share Capital)\n\nClass of shares ORDINARY Number allotted 1\nAggregate nominal 1\nCurrency GBP value\n\nAmount paid per share 0\n\nAmount unpaid per share 1\n\nPrescribed particulars\n\nVOTING RIGHTS SHARES RANK EQUALLY FOR VOTING PURPOSES. ON A SHOW OF HANDS EACH MEMBER\nSHALL HAVE ONE VOTE AND ON A POLL EACH MEMBER SHALL HAVE ONE VOTE PER SHARE HELD.\nDIVIDEND RIGHTS EACH SHARE RANKS EQUALLY FOR ANY DIVIDEND DECLARED. DISTRIBUTION RIGHTS\nON A WINDING UP EACH SHARE RANKS EQUALLY FOR ANY DISTRIBUTION MADE ON A WINDING UP.\nREDEEMABLE SHARES THE SHARES ARE NOT REDEEMABLE.\n\nStatement of Capital (Totals)\n\nCurrency GBP Total number\nof shares\n\nTotal aggregate\nnominal value\n\nFull Details of Shareholders\n\nThe details below relate to individuals / corporate bodies that were shareholders as at 06/08/2014\nor that had ceased to be shareholders since the made up date of the previous Annual Return\n\nA full list of shareholders for the company are shown below\n\n \n\nShareholding I ; 0 ORDIVARY shares held as at the date of this return\nName: BEDFORD NO.3 LIMITED\n\nShareholding 2 ; 0 ORDIVARY shares held as at the date of this return\nName: BEDFORD NOMINEES (UK) LTD.\n\nShareholding 3 ; 1 ORDIVARY shares held as at the date of this return\nName: ECCLESTARN LTD\n\nShareholding 4 ; 0 ORDIVARY shares held as at the date of this return\nName: INSTANT COMPANIES LIMITED\n\nShareholding 5 ; 0 ORDIVARY shares held as at the date of this return\nName: MR AYOMIDE OTUBANJO\n\nElectronically Filed Document for Company Number: 06087729 Page-4\n\n",
+ "Authorisation\nAuthenticated\n\nThis form was authorised by one of the following:\n\nDirector, Secretary, Person Authorised, Charity Commission Receiver and Manager, CIC Manager, Judicial Factor.\n\nEnd of Electronically Filed Document for Company Number: 06087729 Page:5\n\n"]
 ```
 
 ## Some features/todos
@@ -67,7 +89,7 @@ ss=nil, registered_address_in_full="20-22 BEDFORD ROW, LONDON, WC1R 4JS", altern
 - [x] Package gem
 - [x] Add tests!
 - [ ] Add representation classes for other "objects"
-- [ ] OCR filings with tesseract
+- [x] OCR filings with tesseract
 - [ ] Add parameters for cache control
 - [ ] Return results as ResultsSet object
 - [ ] Release gem
@@ -77,7 +99,7 @@ ss=nil, registered_address_in_full="20-22 BEDFORD ROW, LONDON, WC1R 4JS", altern
 - [x] Group on postcode
 - [x] Group on officer
 - [ ] Group on industry codes
-- [ ] Retrieve filings from beta.companieshouse.gov.uk
+- [x] Retrieve filings from beta.companieshouse.gov.uk
 - [ ] Feedback on API usage limits
 - [ ] Add `to_csv` on ResultsSet objects - `CSV::Table.new(results_set.map {|x| CSV::Row.new(x.to_h.keys, x.to_h.values) }).to_csv`
 - [ ] Entity extraction on OCRed filings
