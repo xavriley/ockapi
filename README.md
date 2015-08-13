@@ -11,6 +11,12 @@ easier to research companies and officers.
 I wanted to call it [Okapi after the Congolese relative of the giraffe](https://en.wikipedia.org/?title=Okapi)
 but believe it or not, that gem name is taken. Thus Ockapi.
 
+## Requirements
+
+* Redis
+* An OpenCorporates API key (free)
+* A Companies House Beta API key (free)
+
 ## Getting started
 
 To take advantage of caching API queries, you'll need Redis installed and running.
@@ -38,7 +44,10 @@ Found 19 companies
  #<Company name="ALLIANCE BOOTS PROPCO B LLP", company_number="OC331121", jurisdiction_code="gb", incorporation_date="2007-09-05", dissolution_date=nil, company_type="Limited Liability Partnership", registry_url="http://data.companieshouse.gov.uk/doc/company/OC331121", branch_status=nil, inactive=false, current_status="Active", created_at="2010-10-21T14:14:35+00:00", updated_at="2015-06-06T13:32:36+00:00", retrieved_at="2015-06-01T00:00:00+00:00", opencorporates_url="https://opencorporates.com/companies/gb/OC331121", previous_names=[], source=[#<Representation publisher="UK Companies House", url="http://xmlgw.companieshouse.gov.uk/", terms="UK Crown Copyright", retrieved_at="2015-06-01T00:00:00+00:00">], registered_address_in_full="SEDLEY PLACE 4TH FLOOR, 361 OXFORD STREET, LONDON, W1C 2JL">,
  ...
  ]
+```
 
+Let's try dealing with some [Messi data](https://www.globalwitness.org/archive/messis-alleged-tax-evasion-scheme-relied-hiding-owners-uk-and-other-companies/)
+```ruby
 # Find individual companies by jurisdiction code and company number
 > sidefloor = Company.find("gb", "06087729")
 => #<Company name="SIDEFLOOR LIMITED", company_number="06087729", jurisdiction_code="gb", incorporation_date="2007-02-07", dissolution_date=nil, company_type="Private Limited Company", registry_url="http://data.companieshouse.gov.uk/doc
@@ -88,8 +97,10 @@ Warning in pixReadMemPnm: work-around: writing to a temp file
 - [x] Namespace everything to Ockapi
 - [x] Package gem
 - [x] Add tests!
-- [ ] Add representation classes for other "objects"
+- [x] Add representation classes for other "objects"
 - [x] OCR filings with tesseract
+- [ ] Add specs for Company.search
+- [ ] Make sure Company.search returns all results - `Company.search(name: "Central", registered_address_in_full: "S43 4PZ")`
 - [ ] Add parameters for cache control
 - [ ] Return results as ResultsSet object
 - [ ] Release gem
