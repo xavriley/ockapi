@@ -9,7 +9,7 @@ easier to research companies and officers.
 ## Why Ockapi?
 
 I wanted to call it [Okapi after the Congolese relative of the giraffe](https://en.wikipedia.org/?title=Okapi)
-but believe it or not, that gem name is taken. Thus Ockapi.
+but believe it or not, that gem name is taken. Thus Ockapi. (You could read it as "an Ok version of the OpenCorporates (OC) api")
 
 ## Requirements
 
@@ -92,6 +92,8 @@ Warning in pixReadMemPnm: work-around: writing to a temp file
 
 ## Some features/todos
 
+I'm beginning to think this should be split into two gems, or a wrapper of two gems. One for the OpenCorporates API and one for the beta.companieshouse.gov.uk API.
+
 #### Technical
 - [x] Basic caching with HTTParty + CacheBar
 - [x] Namespace everything to Ockapi
@@ -99,6 +101,7 @@ Warning in pixReadMemPnm: work-around: writing to a temp file
 - [x] Add tests!
 - [x] Add representation classes for other "objects"
 - [x] OCR filings with tesseract
+- [ ] Make a proper REPL with help messages, documentation and everything
 - [ ] Add specs for Company.search
 - [ ] Make sure Company.search returns all results - `Company.search(name: "Central", registered_address_in_full: "S43 4PZ")`
 - [ ] Add parameters for cache control
@@ -111,9 +114,12 @@ Warning in pixReadMemPnm: work-around: writing to a temp file
 - [x] Group on officer
 - [ ] Group on industry codes
 - [x] Retrieve filings from beta.companieshouse.gov.uk
+- [ ] Add `latest_annual_report` method - `travelandevents.filings.select {|x| x.title[/annual accounts/i] }.first.get_companies_house_doc.join("\n")`
 - [ ] Feedback on API usage limits
 - [ ] Add `to_csv` on ResultsSet objects - `CSV::Table.new(results_set.map {|x| CSV::Row.new(x.to_h.keys, x.to_h.values) }).to_csv`
 - [ ] Entity extraction on OCRed filings
+- [ ] Parser/regex on OCRed filings
+- [ ] Offer XBRL where available
 
 ## Credits
 
