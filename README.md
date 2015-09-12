@@ -103,7 +103,7 @@ I'm beginning to think this should be split into two gems, or a wrapper of two g
 - [x] Add representation classes for other "objects"
 - [x] OCR filings with tesseract
 - [ ] Make a proper REPL with help messages, documentation and everything
-- [ ] Add specs for Company.search
+- [x] Add specs for Company.search
 - [x] Make sure Company.search returns all results - `Company.search(name: "Central", registered_address_in_full: "S43 4PZ")`
 - [ ] Add parameters for cache control
 - [ ] Return results as ResultsSet object
@@ -117,12 +117,13 @@ I'm beginning to think this should be split into two gems, or a wrapper of two g
 - [x] Group on officer
 - [ ] Group on industry codes
 - [x] Retrieve filings from beta.companieshouse.gov.uk
-- [ ] Add `latest_annual_report` method - `travelandevents.filings.select {|x| x.title[/annual accounts/i] }.first.get_companies_house_doc.join("\n")`
+- [x] Add `latest_annual_report` method - `travelandevents.filings.select {|x| x.title[/annual accounts/i] }.first.get_companies_house_doc.join("\n")`
 - [ ] Feedback on API usage limits
 - [ ] Add `to_csv` on ResultsSet objects - `CSV::Table.new(results_set.map {|x| CSV::Row.new(x.to_h.keys, x.to_h.values) }).to_csv`
 - [ ] Entity extraction on OCRed filings
 - [ ] Parser/regex on OCRed filings
 - [ ] Offer XBRL where available
+- [ ] Silence STDERR for tesseract and pdfimages
 
 ## Credits
 
