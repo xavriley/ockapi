@@ -14,7 +14,7 @@ module Ockapi
     def self.reconcile(name, opts={})
       raw = HTTParty.get("https://opencorporates.com/reconcile/gb", {query: {query: name}, api_token: ENV['OPENC_API_TOKEN']}).body
       result = Array(JSON.parse(raw)["result"]).first
-      return nil if result.empty?
+      return nil if result.nil?
 
       $stderr.puts "MATCH: #{result['name']} - score #{result['score']}"
 
@@ -44,6 +44,26 @@ module Ockapi
       # else returns a new object
       client   = Client.new(connection: Connection.new)
       Company.new(client.company(path_args: [jurisdiction_code, company_number])["results"]["company"]) rescue self
+    end
+
+    def latest_annual_report
+      # Convenience method
+      aa = filings.find {|x| x.title[/annual accounts/i] }
+      if aa.empty?
+        return nil
+      else
+        aa.get_companies_house_doc.join("\n")
+      end
+    end
+
+    def latest_annual_return
+      # Convenience method
+      ar = filings.find {|x| x.title[/annual return/i] }
+      if ar.empty?
+        return nil
+      else
+        ar.get_companies_house_doc.join("\n")
+      end
     end
 
     def related_by(*opts)
