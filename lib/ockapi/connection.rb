@@ -17,7 +17,7 @@ module Ockapi
 
     def get(relative_path, query={})
       relative_path = add_api_version(relative_path)
-      res = connection.get relative_path, query: DEFAULT_QUERY.merge(query).reject {|k,v| v.blank? }
+      res = connection.get relative_path, query: DEFAULT_QUERY.merge(query).reject {|k,v| v.to_s.empty? }
 
       JSON.parse(res.body)
     end

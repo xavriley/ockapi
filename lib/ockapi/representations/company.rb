@@ -2,13 +2,26 @@ module Ockapi
   class Company < Representation
     RELATED_OPTS = [:postcode, :officer, :industry_code]
 
-    def self.search(opts = {})
-      Search.new(opts).all
+    def self.search(query, opts)
+      Search.new(*[query,opts].compact).all
     end
 
     def self.find(jurisdiction_code, company_number)
       # Call full! by default on single companies
       Search.new({company_number: company_number, jurisdiction_code: jurisdiction_code}).find.full!
+    end
+
+    def self.reconcile(name, opts={})
+      raw = HTTParty.get("https://opencorporates.com/reconcile/gb", {query: {query: name}, api_token: ENV['OPENC_API_TOKEN']}).body
+      result = Array(JSON.parse(raw)["result"]).first
+      return nil if result.empty?
+
+      $stderr.puts "MATCH: #{result['name']} - score #{result['score']}"
+
+      oc_path = result["id"]
+      jurisdiction_code, company_number = oc_path.split('/').values_at(-2,-1)
+      client   = Client.new(connection: Connection.new)
+      Company.new(client.company(path_args: [jurisdiction_code, company_number])["results"]["company"])
     end
 
     def extracted_postcode

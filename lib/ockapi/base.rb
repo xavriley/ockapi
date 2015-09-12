@@ -15,6 +15,7 @@ module Ockapi
       HTTParty::HTTPCache.redis = $redis
       HTTParty::HTTPCache.perform_caching = true
       CacheBar.register_api_to_cache('api.opencorporates.com', {:key_name => "opencorporates", :expire_in => 7200})
+      CacheBar.register_api_to_cache('opencorporates.com', {:key_name => "opencorporates_reconciliation", :expire_in => 7200})
       CacheBar.register_api_to_cache('api.companieshouse.gov.uk', {:key_name => "companieshouse", :expire_in => 7200})
     end
 

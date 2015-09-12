@@ -99,13 +99,16 @@ I'm beginning to think this should be split into two gems, or a wrapper of two g
 - [x] Namespace everything to Ockapi
 - [x] Package gem
 - [x] Add tests!
+- [ ] 100% test coverage!
 - [x] Add representation classes for other "objects"
 - [x] OCR filings with tesseract
 - [ ] Make a proper REPL with help messages, documentation and everything
 - [ ] Add specs for Company.search
-- [ ] Make sure Company.search returns all results - `Company.search(name: "Central", registered_address_in_full: "S43 4PZ")`
+- [x] Make sure Company.search returns all results - `Company.search(name: "Central", registered_address_in_full: "S43 4PZ")`
 - [ ] Add parameters for cache control
 - [ ] Return results as ResultsSet object
+- [x] Add method for OpenCorporates reconciliation
+- [ ] Include OpenCorporates jurisdiction code
 - [ ] Release gem
 - [ ] Parallelize queries with Typhoeus [see here](https://github.com/xavriley/cosy-companies/blob/master/app.rb#L144)
 

@@ -1,0 +1,147 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://opencorporates.com/reconcile/gb?query=Sidefloor%20Limited
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"276e6dd8d5f7f5bb4978a490f7253853"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      - private
+      Set-Cookie:
+      - SERVERID=web3; path=/
+      - flash=%7B%7D; path=/; secure
+      X-Request-Id:
+      - d9f0aa7a7bef9e0b3aa65761cb1cc8ff
+      X-Runtime:
+      - '0.050320'
+      X-Powered-By:
+      - Phusion Passenger
+      Date:
+      - Sat, 12 Sep 2015 20:05:47 GMT
+      Server:
+      - nginx + Phusion Passenger
+      Access-Control-Allow-Origin:
+      - 'null'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET
+      Access-Control-Allow-Headers:
+      - DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type
+    body:
+      encoding: UTF-8
+      string: '{"result":[{"id":"/companies/gb/06087729","name":"SIDEFLOOR LIMITED","type":[{"id":"/organization/organization","name":"Organization"}],"score":86.0,"match":false,"uri":"http://opencorporates.com/companies/gb/06087729"}],"duration":26.014252000000003}'
+    http_version: 
+  recorded_at: Sat, 12 Sep 2015 20:05:47 GMT
+- request:
+    method: get
+    uri: https://api.opencorporates.com/v0.4/companies/gb/06087729?api_token=<%= ENV["OPENC_API_TOKEN"]
+      %>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '14857'
+      Status:
+      - 200 OK
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Phusion Passenger 4.0.59
+      Date:
+      - Sat, 12 Sep 2015 20:05:47 GMT
+      Server:
+      - nginx/1.6.1 + Phusion Passenger 4.0.52
+      Access-Control-Allow-Origin:
+      - 'null'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET
+      Access-Control-Allow-Headers:
+      - DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type
+    body:
+      encoding: UTF-8
+      string: '{"api_version":"0.4","results":{"company":{"name":"SIDEFLOOR LIMITED","company_number":"06087729","jurisdiction_code":"gb","incorporation_date":"2007-02-07","dissolution_date":null,"company_type":"Private
+        Limited Company","registry_url":"http://data.companieshouse.gov.uk/doc/company/06087729","branch_status":null,"inactive":false,"current_status":"Active","created_at":"2010-10-23T07:29:07+00:00","updated_at":"2015-08-10T11:35:20+00:00","retrieved_at":"2015-06-01T00:00:00+00:00","opencorporates_url":"https://opencorporates.com/companies/gb/06087729","source":{"publisher":"UK
+        Companies House","url":"http://xmlgw.companieshouse.gov.uk/","terms":"UK Crown
+        Copyright","retrieved_at":"2015-06-01T00:00:00+00:00"},"agent_name":null,"agent_address":null,"alternative_names":[],"previous_names":[],"registered_address_in_full":"20-22
+        BEDFORD ROW, LONDON, WC1R 4JS","industry_codes":[{"industry_code":{"code":"93199","description":"Other
+        sports activities (not including activities of racehorse owners) n.e.c.","code_scheme_id":"uk_sic_2007","code_scheme_name":"UK
+        SIC Classification 2007","uid":"uk_sic_2007-93199"}}],"registered_address":{"street_address":"20-22
+        BEDFORD ROW","locality":"LONDON","region":null,"postal_code":"WC1R 4JS","country":"United
+        Kingdom"},"corporate_groupings":[],"data":null,"financial_summary":null,"home_company":null,"controlling_entity":null,"filings":[{"filing":{"id":205544241,"title":"Annual
+        Return","uid":"51051deJxjZRd2YnXi4ohPyU9OSS1OBnHYQJzMFCdxfgMDgwhjlwBjM9cQUzNjYycuzvi0/KLcksqCVCdxFscgA0MnLtb4lOTEEidxRkOYMYklQFkOIwNDEwMLA7MmNef83ILEvMzUYo/80uJUK6sIXx/3cCsrz9zE9FQo5Z1aSaQybgYGBkYgZgJiZiBmAWJWIGYDYnYg5gBiTiDmAmJuAO3aNLg=","opencorporates_url":"https://opencorporates.com/filings/205544241","date":"2014-08-06"}},{"filing":{"id":204738878,"title":"Annual
+        Accounts","uid":"ea0fd3eJxjZRd2YnXi4ohPyU9OSS1OBnHYQJzMFCdxfgMDA0djE3cffxMLU1MDYycuzvi0/KLcksqCVCdxJkdHJy7W+JTkxBIncUYDmCGJJUA5DiMDQxMDYyOLJjXn/NyCxLzM1GKP/NLiVCurCF8f93ArK8/cxPRUKOWdWkmkMm4GBgZGIGYCYmYgZgFiViBmA2J2IOYAYk4g5gJibgBi/DQT","opencorporates_url":"https://opencorporates.com/filings/204738878","date":"2014-03-28"}},{"filing":{"id":204738879,"title":"Annual
+        Return","uid":"339592eJxjZRd2YnXi4ohPyU9OSS1OBnHYQJzMFCdxfgMDgwhjQ/Ng90h3UxNTEycuzvi0/KLcksqCVCdxFscgA0MnLtb4lOTEEidxRkOYMYklQFkOIwNDEwMjA/MmNef83ILEvMzUYo/80uJUK6sIXx/3cCsrz9zE9FQo5Z1aSaQybgYGBkYgZgJiZiBmAWJWIGYDYnYg5gBiTiDmAmJuAPRoNMA=","opencorporates_url":"https://opencorporates.com/filings/204738879","date":"2014-02-07"}},{"filing":{"id":193962714,"title":"Change
+        of director''s details","uid":"965aaaeJxjZRd2YnXi4ohPyU9OSS1OBnHYQJzMFCdxfgMDgwgjZ1/fIC83UyNTQycuzvi0/KLcksqCVCdxFmcPA6AQa3xKcmKJkzijEcyYxBKgLIeRgaGxgbmhaZOac35uQWJeZmqxR35pcaqVVYSvj3u4lZVnbmJ6KpTyTq0kUhk3AwMDIxAzATEzELMAMSsQswExOxBzADEnEHMBMTcAAo000w==","opencorporates_url":"https://opencorporates.com/filings/193962714","date":"2013-07-15"}},{"filing":{"id":193962716,"title":"Termination
+        of appointment of director ","uid":"1f6b6aeJxjZRd2YnXi4ohPyU9OSS1OBnHYQJzMFCdxfgMDgwgjR1cLF29/UyNDcycuzvi0/KLcksqCVCdxlhBfA0MnLtb4lOTEEidxRiOYMYklQFkOIwNDYwMzQ6MmNef83ILEvMzUYo/80uJUK6sIXx/3cCsrz9zE9FQo5Z1aSaQybgYGBkYgZgJiZiBmAWJWIGYDYnYg5gBiTiDmAmJuAPZpNMQ=","opencorporates_url":"https://opencorporates.com/filings/193962716","date":"2013-06-12"}},{"filing":{"id":193962715,"title":"Appointment
+        of director","uid":"339fdaeJxjZRd2YnXi4ohPyU9OSS1OBnHYQJzMFCdxfgMDgwgjR1fLSDdzUyNDcycuzvi0/KLcksqCVCdxFscAA0MnLtb4lOTEEidxRiOYMYklQFkOIwNDYwMzQ6MmNef83ILEvMzUYo/80uJUK6sIXx/3cCsrz9zE9FQo5Z1aSaQybgYGBkYgZgJiZiBmAWJWIGYDYnYg5gBiTiDmAmJuAOd0NK0=","opencorporates_url":"https://opencorporates.com/filings/193962715","date":"2013-06-12"}},{"filing":{"id":193962717,"title":"Annual
+        Return","uid":"136151eJxjZRd2YnXi4ohPyU9OSS1OBnHYQJzMFCdxfgMDgwgjw6AwJ9cIUwNLYycuzvi0/KLcksqCVCdxFscgA0MnLtb4lOTEEidxRkOYMYklQFkOIwNDYwMjA4smNef83ILEvMzUYo/80uJUK6sIXx/3cCsrz9zE9FQo5Z1aSaQybgYGBkYgZgJiZiBmAWJWIGYDYnYg5gBiTiDmAmJuAAL8NNQ=","opencorporates_url":"https://opencorporates.com/filings/193962717","date":"2013-02-08"}},{"filing":{"id":193962719,"title":"Annual
+        Accounts","uid":"d9d2afeJxjZRd2YnXi4ohPyU9OSS1OBnHYQJzMFCdxfgMDA0dDf0fjED9fUwMzAycuzvi0/KLcksqCVCdxJkdHJy7W+JTkxBIncUYDmCGJJUA5DiMDQ2MDQwOTJjXn/NyCxLzM1GKP/NLiVCurCF8f93ArK8/cxPRUKOWdWkmkMm4GBgZGIGYCYmYgZgFiViBmA2J2IOYAYk4g5gJibgB9vTQ2","opencorporates_url":"https://opencorporates.com/filings/193962719","date":"2013-01-04"}},{"filing":{"id":130728017,"title":"Annual
+        Accounts","uid":"82fa3eeJxjZRd2YnXi4ohPyU9OSS1OBnHYQJzMFCdxfgMDA0dDM78gF0M/E3NLMycuzvi0/KLcksqCVCdxJkdHJy7W+JTkxBIncUYDmCGJJUA5DiMDQyMDE0PjJjXn/NyCxLzM1GKP/NLiVCurCF8f93ArK8/cxPRUKOWdWkmkMm4GBgZGIGYCYmYgZgFiViBmA2J2IOYAYk4g5gJibgB3WzQu","opencorporates_url":"https://opencorporates.com/filings/130728017","date":"2012-04-13"}},{"filing":{"id":130728018,"title":"Annual
+        Return","uid":"8475e2eJxjZRd2YnXi4ohPyU9OSS1OBnHYQJzMFCdxfgMDgwhDI0fTqHBjE3MjSycuzvi0/KLcksqCVCdxFscgA0MnLtb4lOTEEidxRkOYMYklQFkOIwNDIwMjA8smNef83ILEvMzUYo/80uJUK6sIXx/3cCsrz9zE9FQo5Z1aSaQybgYGBkYgZgJiZiBmAWJWIGYDYnYg5gBiTiDmAmJuAOYDNKw=","opencorporates_url":"https://opencorporates.com/filings/130728018","date":"2012-02-09"}},{"filing":{"id":130728019,"title":"Annual
+        Return","uid":"4b211aeJxjZRd2YnXi4ohPyU9OSS1OBnHYQJzMFCdxfgMDgwj/YPfQIPdQE2NzEycuzvi0/KLcksqCVCdxFscgA0MnLtb4lOTEEidxRkOYMYklQFkOIwNDQwMjA/MmNef83ILEvMzUYo/80uJUK6sIXx/3cCsrz9zE9FQo5Z1aSaQybgYGBkYgZgJiZiBmAWJWIGYDYnYg5gBiTiDmAmJuADJnNRQ=","opencorporates_url":"https://opencorporates.com/filings/130728019","date":"2011-02-07"}},{"filing":{"id":130728020,"title":"Annual
+        Accounts","uid":"81fb1ceJxjZRd2YnXi4ohPyU9OSS1OBnHYQJzMFCdxfgMDA0djj6CQAC9fE2Mjcycuzvi0/KLcksqCVCdxJkdHJy7W+JTkxBIncUYDmCGJJUA5DiMDQwNDINGk5pyfW5CYl5la7JFfWpxqZRXh6+MebmXlmZuYngqlvFMriVTGzcDAwAjETEDMDMQsQMwKxGxAzA7EHEDMCcRcQMwNAJm5NFw=","opencorporates_url":"https://opencorporates.com/filings/130728020","date":"2010-12-01"}},{"filing":{"id":130728021,"title":"Annual
+        Return","uid":"2c9257eJxjZRd2YnXi4ohPyU9OSS1OBnHYQJzMFCdxfgMDgwg3CxcvDxdHE0NDYycuzvi0/KLcksqCVCdxFscgA0MnLtb4lOTEEidxRkOYMYklQFkOIwNDAwMjA8smNef83ILEvMzUYo/80uJUK6sIXx/3cCsrz9zE9FQo5Z1aSaQybgYGBkYgZgJiZiBmAWJWIGYDYnYg5gBiTiDmAmJuAPCCNLk=","opencorporates_url":"https://opencorporates.com/filings/130728021","date":"2010-02-09"}},{"filing":{"id":130728031,"title":"Annual
+        Accounts","uid":"961a19eJxjZRd2YnXi4ohPyU9OSS1OBnHYQJzMFCdxfgMDg4igYPNQdwtTEwMLQycuzvi0/KLcksqCVCdxJkdHJy7W+JTkxBIncUYDmCGJJUA5DiMDA0tDI2ODJjXn/NyCxLzM1GKP/NLiVCurCF8f93ArK8/cxPRUKOWdWkmkMm4GBgZGIGYCYmYgZgFiViBmA2J2IOYAYk4g5gJibgCVQjRX","opencorporates_url":"https://opencorporates.com/filings/130728031","date":"2009-12-30"}},{"filing":{"id":130728032,"title":"Change
+        of director''s details","uid":"d9c428eJxjZRd2YnXi4ohPyU9OSS1OBnHYQJzMFCdxfgMDA8fwUA8Dt2B/EwNzcycuzvi0/KLcksqCVCdxFmcPA0MnLtb4lOTEEidxRiOYMYklQFkOIwMDS0MjI4MmNef83ILEvMzUYo/80uJUK6sIXx/3cCsrz9zE9FQo5Z1aSaQybgYGBkYgZgJiZiBmAWJWIGYDYnYg5gBiTiDmAmJuAAeNNNk=","opencorporates_url":"https://opencorporates.com/filings/130728032","date":"2009-12-20"}},{"filing":{"id":130728034,"title":"Annual
+        Accounts","uid":"798358eJxjZRd2YnXi4ohPyU9OSS1OBnHYQJzMFCdxfgMDA0djHxczS6NgY3MTYycuzvi0/KLcksqCVCdxJkdHJy7W+JTkxBIncUYDmCGJJUA5DiMDA0sDEyODJjXn/NyCxLzM1GKP/NLiVCurCF8f93ArK8/cxPRUKOWdWkmkMm4GBgZGIGYCYmYgZgFiViBmA2J2IOYAYk4g5gJibgBlvDQW","opencorporates_url":"https://opencorporates.com/filings/130728034","date":"2009-04-20"}},{"filing":{"id":130728036,"title":"Companies
+        Annual Return","uid":"5d9bbbeJxjZRd2YnXi4ohPyU9OSS1OBnHYQJzMFCdxfgMDg4gASx8PcwtnYzNLYycuzvi0/KLcksqCVCdxFmMz40QnLtb4lOTEEidxRkOYMYklQFkOIwMDSwMjA8smNef83ILEvMzUYo/80uJUK6sIXx/3cCsrz9zE9FQo5Z1aSaQybgYGBkYgZgJiZiBmAWJWIGYDYnYg5gBiTiDmAmJuAPs5NMw=","opencorporates_url":"https://opencorporates.com/filings/130728036","date":"2009-02-09"}},{"filing":{"id":130728040,"title":"Appointment
+        of Director or Secretary","uid":"099da9eJxjZRd2YnXi4ohPyU9OSS1OBnHYQJzMFCdxfgMDgwi/QC83cyMPYzMLCycuzvi0/KLcksqCVCdxFiMLi0QnLtb4lOTEEidxRiOYMYklQFkOIwMDSwMjA+MmNef83ILEvMzUYo/80uJUK6sIXx/3cCsrz9zE9FQo5Z1aSaQybgYGBkYgZgJiZiBmAWJWIGYDYnYg5gBiTiDmAmJuAAviNOI=","opencorporates_url":"https://opencorporates.com/filings/130728040","date":"2009-02-03"}},{"filing":{"id":130728039,"title":"Terminating
+        appointment as Director or Secretary","uid":"02c2deeJxjZRd2YnXi4ohPyU9OSS1OBnHYQJzMFCdxfgMDgwi/QO8gc6NQYzMLCycuzvi0/KLcksqCVCdxFiMLiyQnLtb4lOTEEidxRiOYMYklQFkOIwMDSwMjA+MmNef83ILEvMzUYo/80uJUK6sIXx/3cCsrz9zE9FQo5Z1aSaQybgYGBkYgZgJiZiBmAWJWIGYDYnYg5gBiTiDmAmJuAB8lNP0=","opencorporates_url":"https://opencorporates.com/filings/130728039","date":"2009-02-03"}},{"filing":{"id":130728043,"title":"Companies
+        Annual Return","uid":"6b5143eJxjZRd2YnXi4ohPyU9OSS1OBnHYQJzMFCdxfgMDgwi3cFPnCANfYxNjMycuzvi0/KLcksqCVCdxFmMz40QnLtb4lOTEEidxRkOYMYklQFkOIwMDCwMjA/MmNef83ILEvMzUYo/80uJUK6sIXx/3cCsrz9zE9FQo5Z1aSaQybgYGBkYgZgJiZiBmAWJWIGYDYnYg5gBiTiDmAmJuAAmkNN8=","opencorporates_url":"https://opencorporates.com/filings/130728043","date":"2008-02-07"}},{"filing":{"id":130728047,"title":"Terminating
+        appointment as Director or Secretary","uid":"ca1901eJxjZRd2YnXi4ohPyU9OSS1OBnHYQJzMFCdxfgMDA0cfM1fjQO9gYyNzSycuzvi0/KLcksqCVCdxFiMLiyQnLtb4lOTEEidxRiOYMYklQFkOIwMDcwMzI/MmNef83ILEvMzUYo/80uJUK6sIXx/3cCsrz9zE9FQo5Z1aSaQybgYGBkYgZgJiZiBmAWJWIGYDYnYg5gBiTiDmAmJuAAJyNNk=","opencorporates_url":"https://opencorporates.com/filings/130728047","date":"2007-06-27"}},{"filing":{"id":130728045,"title":"Terminating
+        appointment as Director or Secretary","uid":"ced81beJxjZRd2YnXi4ohPyU9OSS1OBnHYQJzMFCdxfgMDA0cfM1eTQO8QYyNzSycuzvi0/KLcksqCVCdxFiMLiyQnLtb4lOTEEidxRiOYMYklQFkOIwMDcwMzI/MmNef83ILEvMzUYo/80uJUK6sIXx/3cCsrz9zE9FQo5Z1aSaQybgYGBkYgZgJiZiBmAWJWIGYDYnYg5gBiTiDmAmJuAAPhNNs=","opencorporates_url":"https://opencorporates.com/filings/130728045","date":"2007-06-27"}},{"filing":{"id":130728049,"title":"Filing
+        dated 2007-05-11","uid":"e0c784eJxjZRd2YnXi4ohPyU9OSS1OBnHYQJzMFCdxfgMDA8cg7yivALNIYyMTMycuzvi0/KLcksqCVCdxVlefINdgJy7W+JTkxBIncUZLmDmJJUBpDiMDA3MDU0PDJjXn/NyCxLzM1GKP/NLiVCurCF8f93ArK8/cxPRUKOWdWkmkMm4GBgZGIGYCYmYgZgFiViBmA2J2IOYAYk4g5gJibgCCTzWB","opencorporates_url":"https://opencorporates.com/filings/130728049","date":"2007-05-11"}},{"filing":{"id":130728062,"title":"Terminating
+        appointment as Director or Secretary","uid":"c11434eJxjZRd2YnXi4ohPyU9OSS1OBnHYQJzMFCdxfgMDg4hQA2c3f3dfYyMjQycuzvi0/KLcksqCVCdxFiMLiyQnLtb4lOTEEidxRiOYMYklQFkOIwMDcwMTA9MmNef83ILEvMzUYo/80uJUK6sIXx/3cCsrz9zE9FQo5Z1aSaQybgYGBkYgZgJiZiBmAWJWIGYDYnYg5gBiTiDmAmJuAA1bNOU=","opencorporates_url":"https://opencorporates.com/filings/130728062","date":"2007-04-05"}},{"filing":{"id":130728058,"title":"Terminating
+        appointment as Director or Secretary","uid":"7e816beJxjZRd2YnXi4ohPyU9OSS1OBnHYQJzMFCdxfgMDg4hQA2cvf/dAYyMjQycuzvi0/KLcksqCVCdxFiMLiyQnLtb4lOTEEidxRiOYMYklQFkOIwMDcwMTA9MmNef83ILEvMzUYo/80uJUK6sIXx/3cCsrz9zE9FQo5Z1aSaQybgYGBkYgZgJiZiBmAWJWIGYDYnYg5gBiTiDmAmJuABMXNO0=","opencorporates_url":"https://opencorporates.com/filings/130728058","date":"2007-04-05"}},{"filing":{"id":130728056,"title":"Appointment
+        of Director or Secretary","uid":"2421f8eJxjZRd2YnXi4ohPyU9OSS1OBnHYQJzMFCdxfgMDg4hQA+cgf/dIYyMjQycuzvi0/KLcksqCVCdxFiMLi0QnLtb4lOTEEidxRiOYMYklQFkOIwMDcwMTA9MmNef83ILEvMzUYo/80uJUK6sIXx/3cCsrz9zE9FQo5Z1aSaQybgYGBkYgZgJiZiBmAWJWIGYDYnYg5gBiTiDmAmJuAB3wNPw=","opencorporates_url":"https://opencorporates.com/filings/130728056","date":"2007-04-05"}},{"filing":{"id":130728054,"title":"Appointment
+        of Director or Secretary","uid":"3931a8eJxjZRd2YnXi4ohPyU9OSS1OBnHYQJzMFCdxfgMDg4iQKANHf3djYyMjQycuzvi0/KLcksqCVCdxFiMLi0QnLtb4lOTEEidxRiOYMYklQFkOIwMDcwMTA9MmNef83ILEvMzUYo/80uJUK6sIXx/3cCsrz9zE9FQo5Z1aSaQybgYGBkYgZgJiZiBmAWJWIGYDYnYg5gBiTiDmAmJuAAbHNNs=","opencorporates_url":"https://opencorporates.com/filings/130728054","date":"2007-04-05"}},{"filing":{"id":130728052,"title":"Filing
+        dated 2007-04-05","uid":"f1f1d8eJxjZRd2YnXi4ohPyU9OSS1OBnHYQJzMFCdxfgMDg4hQAy9Hf3d/YyMjQycuzvi0/KLcksqCVCdxZiMLcycu1viU5MQSJ3FGY5gpiSVASQ4jAwNzAxMD0yY15/zcgsS8zNRij/zS4lQrqwhfH/dwKyvP3MT0VCjlnVpJpDJuBgYGRiBmAmJmIGYBYlYgZgNidiDmAGJOIOYCYm4AwoU0hg==","opencorporates_url":"https://opencorporates.com/filings/130728052","date":"2007-04-05"}},{"filing":{"id":130728064,"title":"Filing
+        dated 2007-02-07","uid":"c9cd3eeJxjZRd2YnXi4ohPyU9OSS1OBnHYQJzMFCdxfj8DMwMLc3MjPctQY0NzCycuzvi0/KLcksqCVCdxNj/XcE8/Zycu1viU5MQSJ3FGM5hBiSVAeQ4jAwNzAyMD8yY15/zcgsS8zNRij/zS4lQrqwhfH/dwKyvP3MT0VCjlnVpJpDJuBgYGRiBmAmJmIGYBYlYgZgNidiDmAGJOIOYCYm4Aa2Y1VQ==","opencorporates_url":"https://opencorporates.com/filings/130728064","date":"2007-02-07"}}],"officers":[{"officer":{"id":46371996,"name":"DAVID
+        WILLIAM WAYGOOD","position":"director","uid":null,"start_date":"2007-03-20","end_date":"2013-04-27","opencorporates_url":"https://opencorporates.com/officers/46371996","occupation":"BUSINESS
+        CONSULTANT","inactive":true,"current_status":"RESIGNED","address":"4 SHERBORNE
+        GROVE WEST END, KEMSING, SEVENOAKS, KENT TN15 6QU, UK","nationality":"BRITISH","date_of_birth":"1950-11-02"}},{"officer":{"id":71944809,"name":"AYOMIDE
+        OTUBANJO","position":"director","uid":null,"start_date":"2013-05-28","end_date":null,"opencorporates_url":"https://opencorporates.com/officers/71944809","occupation":"CERTIFIED
+        CHARTERED ACCOUNTANT","inactive":false,"current_status":"CURRENT","address":"85-87
+        BAYHAM STREET, LONDON NW1 0AG, UNITED KINGDOM","nationality":"BRITISH","date_of_birth":"1963-08-06"}},{"officer":{"id":99911676,"name":"
+        JORDAN COSEC LIMITED","position":"secretary","uid":null,"start_date":"2009-02-02","end_date":null,"opencorporates_url":"https://opencorporates.com/officers/99911676","occupation":null,"inactive":false,"current_status":"CURRENT","address":"21
+        ST THOMAS STREET, BRISTOL, AVON BS1 6JS, UNITED KINGDOM","nationality":"OTHER","date_of_birth":null}},{"officer":{"id":99911677,"name":"
+        JORDAN COMPANY SECRETARIES LIMITED","position":"secretary","uid":null,"start_date":"2007-03-20","end_date":"2009-02-02","opencorporates_url":"https://opencorporates.com/officers/99911677","occupation":null,"inactive":true,"current_status":"RESIGNED","address":"21
+        ST THOMAS STREET, BRISTOL BS1 6JS","nationality":"BRITISH","date_of_birth":null}},{"officer":{"id":99911678,"name":"
+        SWIFT INCORPORATIONS LIMITED","position":"nominated secretary","uid":null,"start_date":"2007-02-07","end_date":"2007-03-23","opencorporates_url":"https://opencorporates.com/officers/99911678","occupation":null,"inactive":true,"current_status":"RESIGNED","address":"26
+        CHURCH STREET, LONDON NW8 8EP","nationality":"BRITISH","date_of_birth":null}},{"officer":{"id":99911679,"name":"
+        INSTANT COMPANIES LIMITED","position":"nominated director","uid":null,"start_date":"2007-02-07","end_date":"2007-03-23","opencorporates_url":"https://opencorporates.com/officers/99911679","occupation":null,"inactive":true,"current_status":"RESIGNED","address":"1
+        MITCHELL LANE, BRISTOL, AVON BS1 6BU","nationality":"BRITISH","date_of_birth":null}}]}}}'
+    http_version: 
+  recorded_at: Sat, 12 Sep 2015 20:05:47 GMT
+recorded_with: VCR 2.9.3
