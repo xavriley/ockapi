@@ -7,6 +7,7 @@ gem 'redis'
 gem 'redis-namespace'
 
 group :development, :test do
+  gem 'dotenv'
   gem 'rspec'
   gem 'guard-rspec', require: false
   gem 'vcr'
