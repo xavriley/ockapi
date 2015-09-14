@@ -2,7 +2,7 @@ require 'open-uri'
 
 module Ockapi
   class Filing < Representation
-    def get_companies_house_doc
+    def get_companies_house_doc(complex=false)
       auth_options = { :basic_auth => {:username => ENV['COMPANIES_HOUSE_TOKEN']} }
       parent_company = self.parent
       filings_res = HTTParty.get("https://api.companieshouse.gov.uk/company/#{parent_company.company_number}/filing-history", auth_options).body
@@ -32,10 +32,21 @@ module Ockapi
       doc_s3_content_url = URI.parse(doc_s3_content_res.headers["location"])
 
       tmpfile = open(doc_s3_content_url)
-      `pdfimages #{tmpfile.path} /tmp/#{parent_company.company_number}`
+      `pdfimages -png #{tmpfile.path} /tmp/#{parent_company.company_number}`
 
-      Dir.glob("/tmp/#{parent_company.company_number}*").map do |page|
+      image_paths = Dir.glob("/tmp/#{parent_company.company_number}*.png")
+      content = image_paths.map do |page|
         `tesseract #{page} stdout`
+      end.join("\n")
+
+      if complex
+        {
+          content: content,
+          image_paths: image_paths,
+          pdf_path: tmpfile.path
+        }
+      else
+        content
       end
     end
   end

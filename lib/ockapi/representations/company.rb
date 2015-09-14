@@ -46,23 +46,23 @@ module Ockapi
       Company.new(client.company(path_args: [jurisdiction_code, company_number])["results"]["company"]) rescue self
     end
 
-    def latest_annual_report
+    def latest_annual_report(complex=false)
       # Convenience method
       aa = filings.find {|x| x.title[/annual accounts/i] }
       if aa.empty?
         return nil
       else
-        aa.get_companies_house_doc.join("\n")
+        aa.get_companies_house_doc(complex)
       end
     end
 
-    def latest_annual_return
+    def latest_annual_return(complex=false)
       # Convenience method
       ar = filings.find {|x| x.title[/annual return/i] }
       if ar.empty?
         return nil
       else
-        ar.get_companies_house_doc.join("\n")
+        ar.get_companies_house_doc(complex)
       end
     end
 
