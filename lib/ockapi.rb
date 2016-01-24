@@ -4,6 +4,10 @@ require "cachebar"
 require "redis"
 require 'redis-namespace'
 require 'pry'
+require 'dotenv'
+require 'launchy'
+require 'celluloid/pmap'
+Dotenv.load
 
 require_relative "ockapi/version"
 require_relative "ockapi/base"

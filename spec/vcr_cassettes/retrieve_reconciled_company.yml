@@ -23,21 +23,21 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - '"276e6dd8d5f7f5bb4978a490f7253853"'
+      - '"1af75ab68ed7d5c1876e18f9fe7cd4a0"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       - private
       Set-Cookie:
-      - SERVERID=web3; path=/
+      - SERVERID=web1; path=/
       - flash=%7B%7D; path=/; secure
       X-Request-Id:
-      - d9f0aa7a7bef9e0b3aa65761cb1cc8ff
+      - 6a67ec55ba6fe1ecc32cfd45a126449d
       X-Runtime:
-      - '0.050320'
+      - '0.039195'
       X-Powered-By:
       - Phusion Passenger
       Date:
-      - Sat, 12 Sep 2015 20:05:47 GMT
+      - Sun, 20 Sep 2015 20:18:58 GMT
       Server:
       - nginx + Phusion Passenger
       Access-Control-Allow-Origin:
@@ -50,13 +50,12 @@ http_interactions:
       - DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type
     body:
       encoding: UTF-8
-      string: '{"result":[{"id":"/companies/gb/06087729","name":"SIDEFLOOR LIMITED","type":[{"id":"/organization/organization","name":"Organization"}],"score":86.0,"match":false,"uri":"http://opencorporates.com/companies/gb/06087729"}],"duration":26.014252000000003}'
+      string: '{"result":[{"id":"/companies/gb/06087729","name":"SIDEFLOOR LIMITED","type":[{"id":"/organization/organization","name":"Organization"}],"score":86.0,"match":false,"uri":"http://opencorporates.com/companies/gb/06087729"}],"duration":21.912668999999998}'
     http_version: 
-  recorded_at: Sat, 12 Sep 2015 20:05:47 GMT
+  recorded_at: Sun, 20 Sep 2015 20:18:58 GMT
 - request:
     method: get
-    uri: https://api.opencorporates.com/v0.4/companies/gb/06087729?api_token=<%= ENV["OPENC_API_TOKEN"]
-      %>
+    uri: https://api.opencorporates.com/v0.4/companies/gb/06087729?api_token=<OPENC_API_TOKEN>
     body:
       encoding: US-ASCII
       string: ''
@@ -69,7 +68,7 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
-      - '14857'
+      - '14853'
       Status:
       - 200 OK
       X-Content-Type-Options:
@@ -77,7 +76,7 @@ http_interactions:
       X-Powered-By:
       - Phusion Passenger 4.0.59
       Date:
-      - Sat, 12 Sep 2015 20:05:47 GMT
+      - Sun, 20 Sep 2015 20:18:58 GMT
       Server:
       - nginx/1.6.1 + Phusion Passenger 4.0.52
       Access-Control-Allow-Origin:
@@ -91,9 +90,9 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"api_version":"0.4","results":{"company":{"name":"SIDEFLOOR LIMITED","company_number":"06087729","jurisdiction_code":"gb","incorporation_date":"2007-02-07","dissolution_date":null,"company_type":"Private
-        Limited Company","registry_url":"http://data.companieshouse.gov.uk/doc/company/06087729","branch_status":null,"inactive":false,"current_status":"Active","created_at":"2010-10-23T07:29:07+00:00","updated_at":"2015-08-10T11:35:20+00:00","retrieved_at":"2015-06-01T00:00:00+00:00","opencorporates_url":"https://opencorporates.com/companies/gb/06087729","source":{"publisher":"UK
+        Limited Company","registry_url":"http://data.companieshouse.gov.uk/doc/company/06087729","branch_status":null,"inactive":false,"current_status":"Active","created_at":"2010-10-23T07:29:07+00:00","updated_at":"2015-09-20T20:14:49+00:00","retrieved_at":"2015-09-20T20:14:42+00:00","opencorporates_url":"https://opencorporates.com/companies/gb/06087729","source":{"publisher":"UK
         Companies House","url":"http://xmlgw.companieshouse.gov.uk/","terms":"UK Crown
-        Copyright","retrieved_at":"2015-06-01T00:00:00+00:00"},"agent_name":null,"agent_address":null,"alternative_names":[],"previous_names":[],"registered_address_in_full":"20-22
+        Copyright","retrieved_at":"2015-09-20T20:14:42+00:00"},"agent_name":null,"agent_address":null,"alternative_names":[],"previous_names":[],"registered_address_in_full":"20-22
         BEDFORD ROW, LONDON, WC1R 4JS","industry_codes":[{"industry_code":{"code":"93199","description":"Other
         sports activities (not including activities of racehorse owners) n.e.c.","code_scheme_id":"uk_sic_2007","code_scheme_name":"UK
         SIC Classification 2007","uid":"uk_sic_2007-93199"}}],"registered_address":{"street_address":"20-22
@@ -133,15 +132,15 @@ http_interactions:
         GROVE WEST END, KEMSING, SEVENOAKS, KENT TN15 6QU, UK","nationality":"BRITISH","date_of_birth":"1950-11-02"}},{"officer":{"id":71944809,"name":"AYOMIDE
         OTUBANJO","position":"director","uid":null,"start_date":"2013-05-28","end_date":null,"opencorporates_url":"https://opencorporates.com/officers/71944809","occupation":"CERTIFIED
         CHARTERED ACCOUNTANT","inactive":false,"current_status":"CURRENT","address":"85-87
-        BAYHAM STREET, LONDON NW1 0AG, UNITED KINGDOM","nationality":"BRITISH","date_of_birth":"1963-08-06"}},{"officer":{"id":99911676,"name":"
-        JORDAN COSEC LIMITED","position":"secretary","uid":null,"start_date":"2009-02-02","end_date":null,"opencorporates_url":"https://opencorporates.com/officers/99911676","occupation":null,"inactive":false,"current_status":"CURRENT","address":"21
-        ST THOMAS STREET, BRISTOL, AVON BS1 6JS, UNITED KINGDOM","nationality":"OTHER","date_of_birth":null}},{"officer":{"id":99911677,"name":"
-        JORDAN COMPANY SECRETARIES LIMITED","position":"secretary","uid":null,"start_date":"2007-03-20","end_date":"2009-02-02","opencorporates_url":"https://opencorporates.com/officers/99911677","occupation":null,"inactive":true,"current_status":"RESIGNED","address":"21
-        ST THOMAS STREET, BRISTOL BS1 6JS","nationality":"BRITISH","date_of_birth":null}},{"officer":{"id":99911678,"name":"
-        SWIFT INCORPORATIONS LIMITED","position":"nominated secretary","uid":null,"start_date":"2007-02-07","end_date":"2007-03-23","opencorporates_url":"https://opencorporates.com/officers/99911678","occupation":null,"inactive":true,"current_status":"RESIGNED","address":"26
-        CHURCH STREET, LONDON NW8 8EP","nationality":"BRITISH","date_of_birth":null}},{"officer":{"id":99911679,"name":"
-        INSTANT COMPANIES LIMITED","position":"nominated director","uid":null,"start_date":"2007-02-07","end_date":"2007-03-23","opencorporates_url":"https://opencorporates.com/officers/99911679","occupation":null,"inactive":true,"current_status":"RESIGNED","address":"1
+        BAYHAM STREET, LONDON NW1 0AG, UNITED KINGDOM","nationality":"BRITISH","date_of_birth":"1963-08-06"}},{"officer":{"id":99911676,"name":"JORDAN
+        COSEC LIMITED","position":"secretary","uid":null,"start_date":"2009-02-02","end_date":null,"opencorporates_url":"https://opencorporates.com/officers/99911676","occupation":null,"inactive":false,"current_status":"CURRENT","address":"21
+        ST THOMAS STREET, BRISTOL, AVON BS1 6JS, UNITED KINGDOM","nationality":"OTHER","date_of_birth":null}},{"officer":{"id":99911677,"name":"JORDAN
+        COMPANY SECRETARIES LIMITED","position":"secretary","uid":null,"start_date":"2007-03-20","end_date":"2009-02-02","opencorporates_url":"https://opencorporates.com/officers/99911677","occupation":null,"inactive":true,"current_status":"RESIGNED","address":"21
+        ST THOMAS STREET, BRISTOL BS1 6JS","nationality":"BRITISH","date_of_birth":null}},{"officer":{"id":99911678,"name":"SWIFT
+        INCORPORATIONS LIMITED","position":"nominated secretary","uid":null,"start_date":"2007-02-07","end_date":"2007-03-23","opencorporates_url":"https://opencorporates.com/officers/99911678","occupation":null,"inactive":true,"current_status":"RESIGNED","address":"26
+        CHURCH STREET, LONDON NW8 8EP","nationality":"BRITISH","date_of_birth":null}},{"officer":{"id":99911679,"name":"INSTANT
+        COMPANIES LIMITED","position":"nominated director","uid":null,"start_date":"2007-02-07","end_date":"2007-03-23","opencorporates_url":"https://opencorporates.com/officers/99911679","occupation":null,"inactive":true,"current_status":"RESIGNED","address":"1
         MITCHELL LANE, BRISTOL, AVON BS1 6BU","nationality":"BRITISH","date_of_birth":null}}]}}}'
     http_version: 
-  recorded_at: Sat, 12 Sep 2015 20:05:47 GMT
+  recorded_at: Sun, 20 Sep 2015 20:18:58 GMT
 recorded_with: VCR 2.9.3

@@ -2,8 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<%= ENV["OPENC_API_TOKEN"]
-      %>&name=Central&page=1&per_page=100&registered_address_in_full=S43%204PZ
+    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<OPENC_API_TOKEN>&name=Central&page=1&per_page=100&registered_address_in_full=S43%204PZ
     body:
       encoding: US-ASCII
       string: ''
@@ -22,9 +21,9 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Powered-By:
-      - Phusion Passenger 4.0.59
+      - Phusion Passenger 4.0.58
       Date:
-      - Sat, 12 Sep 2015 20:05:31 GMT
+      - Sun, 20 Sep 2015 20:18:31 GMT
       Server:
       - nginx/1.6.1 + Phusion Passenger 4.0.52
       Access-Control-Allow-Origin:
@@ -541,11 +540,10 @@ http_interactions:
         7  NAPIER COURT GANDER LANE, BARLBOROUGH LINKS, CHESTERFIELD, DERBYSHIRE,
         ENGLAND, S43 4PZ"}}],"page":1,"per_page":100,"total_pages":16,"total_count":1599}}'
     http_version: 
-  recorded_at: Sat, 12 Sep 2015 20:05:31 GMT
+  recorded_at: Sun, 20 Sep 2015 20:18:32 GMT
 - request:
     method: get
-    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<%= ENV["OPENC_API_TOKEN"]
-      %>&name=Central&page=2&per_page=100&registered_address_in_full=S43%204PZ
+    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<OPENC_API_TOKEN>&name=Central&page=2&per_page=100&registered_address_in_full=S43%204PZ
     body:
       encoding: US-ASCII
       string: ''
@@ -566,7 +564,7 @@ http_interactions:
       X-Powered-By:
       - Phusion Passenger 4.0.58
       Date:
-      - Sat, 12 Sep 2015 20:05:32 GMT
+      - Sun, 20 Sep 2015 20:18:34 GMT
       Server:
       - nginx/1.6.1 + Phusion Passenger 4.0.52
       Access-Control-Allow-Origin:
@@ -1082,11 +1080,10 @@ http_interactions:
         7  NAPIER COURT GANDER LANE, BARLBOROUGH LINKS, CHESTERFIELD, DERBYSHIRE,
         ENGLAND, S43 4PZ"}}],"page":2,"per_page":100,"total_pages":16,"total_count":1599}}'
     http_version: 
-  recorded_at: Sat, 12 Sep 2015 20:05:32 GMT
+  recorded_at: Sun, 20 Sep 2015 20:18:34 GMT
 - request:
     method: get
-    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<%= ENV["OPENC_API_TOKEN"]
-      %>&name=Central&page=3&per_page=100&registered_address_in_full=S43%204PZ
+    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<OPENC_API_TOKEN>&name=Central&page=3&per_page=100&registered_address_in_full=S43%204PZ
     body:
       encoding: US-ASCII
       string: ''
@@ -1107,7 +1104,7 @@ http_interactions:
       X-Powered-By:
       - Phusion Passenger 4.0.59
       Date:
-      - Sat, 12 Sep 2015 20:05:34 GMT
+      - Sun, 20 Sep 2015 20:18:36 GMT
       Server:
       - nginx/1.6.1 + Phusion Passenger 4.0.52
       Access-Control-Allow-Origin:
@@ -1623,11 +1620,10 @@ http_interactions:
         7 NAPIER COURT GANDER LANE, BALBOURGH LINKS, CHESTERFIELD, DERBYSHIRE, ENGLAND,
         S43 4PZ"}}],"page":3,"per_page":100,"total_pages":16,"total_count":1599}}'
     http_version: 
-  recorded_at: Sat, 12 Sep 2015 20:05:34 GMT
+  recorded_at: Sun, 20 Sep 2015 20:18:36 GMT
 - request:
     method: get
-    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<%= ENV["OPENC_API_TOKEN"]
-      %>&name=Central&page=4&per_page=100&registered_address_in_full=S43%204PZ
+    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<OPENC_API_TOKEN>&name=Central&page=4&per_page=100&registered_address_in_full=S43%204PZ
     body:
       encoding: US-ASCII
       string: ''
@@ -1648,7 +1644,7 @@ http_interactions:
       X-Powered-By:
       - Phusion Passenger 4.0.58
       Date:
-      - Sat, 12 Sep 2015 20:05:35 GMT
+      - Sun, 20 Sep 2015 20:18:39 GMT
       Server:
       - nginx/1.6.1 + Phusion Passenger 4.0.52
       Access-Control-Allow-Origin:
@@ -2164,11 +2160,10 @@ http_interactions:
         7  NAPIER COURT GANDER LANE, BARLBOROUGH LINKS, CHESTERFIELD, DERBYSHIRE,
         ENGLAND, S43 4PZ"}}],"page":4,"per_page":100,"total_pages":16,"total_count":1599}}'
     http_version: 
-  recorded_at: Sat, 12 Sep 2015 20:05:35 GMT
+  recorded_at: Sun, 20 Sep 2015 20:18:39 GMT
 - request:
     method: get
-    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<%= ENV["OPENC_API_TOKEN"]
-      %>&name=Central&page=5&per_page=100&registered_address_in_full=S43%204PZ
+    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<OPENC_API_TOKEN>&name=Central&page=5&per_page=100&registered_address_in_full=S43%204PZ
     body:
       encoding: US-ASCII
       string: ''
@@ -2189,7 +2184,7 @@ http_interactions:
       X-Powered-By:
       - Phusion Passenger 4.0.59
       Date:
-      - Sat, 12 Sep 2015 20:05:36 GMT
+      - Sun, 20 Sep 2015 20:18:41 GMT
       Server:
       - nginx/1.6.1 + Phusion Passenger 4.0.52
       Access-Control-Allow-Origin:
@@ -2705,11 +2700,10 @@ http_interactions:
         7 NAPIER COURT GANDER LANE, BALBOURGH LINKS, CHESTERFIELD, DERBYSHIRE, ENGLAND,
         S43 4PZ"}}],"page":5,"per_page":100,"total_pages":16,"total_count":1599}}'
     http_version: 
-  recorded_at: Sat, 12 Sep 2015 20:05:36 GMT
+  recorded_at: Sun, 20 Sep 2015 20:18:41 GMT
 - request:
     method: get
-    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<%= ENV["OPENC_API_TOKEN"]
-      %>&name=Central&page=6&per_page=100&registered_address_in_full=S43%204PZ
+    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<OPENC_API_TOKEN>&name=Central&page=6&per_page=100&registered_address_in_full=S43%204PZ
     body:
       encoding: US-ASCII
       string: ''
@@ -2728,9 +2722,9 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Powered-By:
-      - Phusion Passenger 4.0.58
+      - Phusion Passenger 4.0.59
       Date:
-      - Sat, 12 Sep 2015 20:05:37 GMT
+      - Sun, 20 Sep 2015 20:18:43 GMT
       Server:
       - nginx/1.6.1 + Phusion Passenger 4.0.52
       Access-Control-Allow-Origin:
@@ -3246,11 +3240,10 @@ http_interactions:
         7  NAPIER COURT GANDER LANE, BARLBOROUGH LINKS, CHESTERFIELD, DERBYSHIRE,
         ENGLAND, S43 4PZ"}}],"page":6,"per_page":100,"total_pages":16,"total_count":1599}}'
     http_version: 
-  recorded_at: Sat, 12 Sep 2015 20:05:37 GMT
+  recorded_at: Sun, 20 Sep 2015 20:18:43 GMT
 - request:
     method: get
-    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<%= ENV["OPENC_API_TOKEN"]
-      %>&name=Central&page=7&per_page=100&registered_address_in_full=S43%204PZ
+    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<OPENC_API_TOKEN>&name=Central&page=7&per_page=100&registered_address_in_full=S43%204PZ
     body:
       encoding: US-ASCII
       string: ''
@@ -3269,9 +3262,9 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Powered-By:
-      - Phusion Passenger 4.0.59
+      - Phusion Passenger 4.0.58
       Date:
-      - Sat, 12 Sep 2015 20:05:38 GMT
+      - Sun, 20 Sep 2015 20:18:44 GMT
       Server:
       - nginx/1.6.1 + Phusion Passenger 4.0.52
       Access-Control-Allow-Origin:
@@ -3787,11 +3780,10 @@ http_interactions:
         7  NAPIER COURT GANDER LANE, BARLBOROUGH LINKS, CHESTERFIELD, DERBYSHIRE,
         ENGLAND, S43 4PZ"}}],"page":7,"per_page":100,"total_pages":16,"total_count":1599}}'
     http_version: 
-  recorded_at: Sat, 12 Sep 2015 20:05:38 GMT
+  recorded_at: Sun, 20 Sep 2015 20:18:45 GMT
 - request:
     method: get
-    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<%= ENV["OPENC_API_TOKEN"]
-      %>&name=Central&page=8&per_page=100&registered_address_in_full=S43%204PZ
+    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<OPENC_API_TOKEN>&name=Central&page=8&per_page=100&registered_address_in_full=S43%204PZ
     body:
       encoding: US-ASCII
       string: ''
@@ -3810,9 +3802,9 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Powered-By:
-      - Phusion Passenger 4.0.59
+      - Phusion Passenger 4.0.58
       Date:
-      - Sat, 12 Sep 2015 20:05:39 GMT
+      - Sun, 20 Sep 2015 20:18:46 GMT
       Server:
       - nginx/1.6.1 + Phusion Passenger 4.0.52
       Access-Control-Allow-Origin:
@@ -4331,11 +4323,10 @@ http_interactions:
         7  NAPIER COURT GANDER LANE, BARLBOROUGH LINKS, CHESTERFIELD, DERBYSHIRE,
         ENGLAND, S43 4PZ"}}],"page":8,"per_page":100,"total_pages":16,"total_count":1599}}'
     http_version: 
-  recorded_at: Sat, 12 Sep 2015 20:05:39 GMT
+  recorded_at: Sun, 20 Sep 2015 20:18:46 GMT
 - request:
     method: get
-    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<%= ENV["OPENC_API_TOKEN"]
-      %>&name=Central&page=9&per_page=100&registered_address_in_full=S43%204PZ
+    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<OPENC_API_TOKEN>&name=Central&page=9&per_page=100&registered_address_in_full=S43%204PZ
     body:
       encoding: US-ASCII
       string: ''
@@ -4354,9 +4345,9 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Powered-By:
-      - Phusion Passenger 4.0.58
+      - Phusion Passenger 4.0.59
       Date:
-      - Sat, 12 Sep 2015 20:05:40 GMT
+      - Sun, 20 Sep 2015 20:18:48 GMT
       Server:
       - nginx/1.6.1 + Phusion Passenger 4.0.52
       Access-Control-Allow-Origin:
@@ -4881,11 +4872,10 @@ http_interactions:
         7  NAPIER COURT GANDER LANE, BARLBOROUGH LINKS, CHESTERFIELD, DERBYSHIRE,
         ENGLAND, S43 4PZ"}}],"page":9,"per_page":100,"total_pages":16,"total_count":1599}}'
     http_version: 
-  recorded_at: Sat, 12 Sep 2015 20:05:40 GMT
+  recorded_at: Sun, 20 Sep 2015 20:18:48 GMT
 - request:
     method: get
-    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<%= ENV["OPENC_API_TOKEN"]
-      %>&name=Central&page=10&per_page=100&registered_address_in_full=S43%204PZ
+    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<OPENC_API_TOKEN>&name=Central&page=10&per_page=100&registered_address_in_full=S43%204PZ
     body:
       encoding: US-ASCII
       string: ''
@@ -4904,9 +4894,9 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Powered-By:
-      - Phusion Passenger 4.0.58
+      - Phusion Passenger 4.0.59
       Date:
-      - Sat, 12 Sep 2015 20:05:41 GMT
+      - Sun, 20 Sep 2015 20:18:49 GMT
       Server:
       - nginx/1.6.1 + Phusion Passenger 4.0.52
       Access-Control-Allow-Origin:
@@ -5422,11 +5412,10 @@ http_interactions:
         7  NAPIER COURT GANDER LANE, BARLBOROUGH LINKS, CHESTERFIELD, DERBYSHIRE,
         ENGLAND, S43 4PZ"}}],"page":10,"per_page":100,"total_pages":16,"total_count":1599}}'
     http_version: 
-  recorded_at: Sat, 12 Sep 2015 20:05:41 GMT
+  recorded_at: Sun, 20 Sep 2015 20:18:49 GMT
 - request:
     method: get
-    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<%= ENV["OPENC_API_TOKEN"]
-      %>&name=Central&page=11&per_page=100&registered_address_in_full=S43%204PZ
+    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<OPENC_API_TOKEN>&name=Central&page=11&per_page=100&registered_address_in_full=S43%204PZ
     body:
       encoding: US-ASCII
       string: ''
@@ -5447,7 +5436,7 @@ http_interactions:
       X-Powered-By:
       - Phusion Passenger 4.0.59
       Date:
-      - Sat, 12 Sep 2015 20:05:42 GMT
+      - Sun, 20 Sep 2015 20:18:50 GMT
       Server:
       - nginx/1.6.1 + Phusion Passenger 4.0.52
       Access-Control-Allow-Origin:
@@ -5963,11 +5952,10 @@ http_interactions:
         7 NAPIER COURT GANDER LANE, BALBOURGH LINKS, CHESTERFIELD, DERBYSHIRE, ENGLAND,
         S43 4PZ"}}],"page":11,"per_page":100,"total_pages":16,"total_count":1599}}'
     http_version: 
-  recorded_at: Sat, 12 Sep 2015 20:05:42 GMT
+  recorded_at: Sun, 20 Sep 2015 20:18:51 GMT
 - request:
     method: get
-    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<%= ENV["OPENC_API_TOKEN"]
-      %>&name=Central&page=12&per_page=100&registered_address_in_full=S43%204PZ
+    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<OPENC_API_TOKEN>&name=Central&page=12&per_page=100&registered_address_in_full=S43%204PZ
     body:
       encoding: US-ASCII
       string: ''
@@ -5986,9 +5974,9 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Powered-By:
-      - Phusion Passenger 4.0.59
+      - Phusion Passenger 4.0.58
       Date:
-      - Sat, 12 Sep 2015 20:05:43 GMT
+      - Sun, 20 Sep 2015 20:18:52 GMT
       Server:
       - nginx/1.6.1 + Phusion Passenger 4.0.52
       Access-Control-Allow-Origin:
@@ -6504,11 +6492,10 @@ http_interactions:
         7 NAPIER COURT GANDER LANE, BALBOURGH LINKS, CHESTERFIELD, DERBYSHIRE, ENGLAND,
         S43 4PZ"}}],"page":12,"per_page":100,"total_pages":16,"total_count":1599}}'
     http_version: 
-  recorded_at: Sat, 12 Sep 2015 20:05:43 GMT
+  recorded_at: Sun, 20 Sep 2015 20:18:52 GMT
 - request:
     method: get
-    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<%= ENV["OPENC_API_TOKEN"]
-      %>&name=Central&page=13&per_page=100&registered_address_in_full=S43%204PZ
+    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<OPENC_API_TOKEN>&name=Central&page=13&per_page=100&registered_address_in_full=S43%204PZ
     body:
       encoding: US-ASCII
       string: ''
@@ -6527,9 +6514,9 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Powered-By:
-      - Phusion Passenger 4.0.58
+      - Phusion Passenger 4.0.59
       Date:
-      - Sat, 12 Sep 2015 20:05:43 GMT
+      - Sun, 20 Sep 2015 20:18:53 GMT
       Server:
       - nginx/1.6.1 + Phusion Passenger 4.0.52
       Access-Control-Allow-Origin:
@@ -7045,11 +7032,10 @@ http_interactions:
         7 NAPIER COURT GANDER LANE, BALBOURGH LINKS, CHESTERFIELD, DERBYSHIRE, ENGLAND,
         S43 4PZ"}}],"page":13,"per_page":100,"total_pages":16,"total_count":1599}}'
     http_version: 
-  recorded_at: Sat, 12 Sep 2015 20:05:44 GMT
+  recorded_at: Sun, 20 Sep 2015 20:18:53 GMT
 - request:
     method: get
-    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<%= ENV["OPENC_API_TOKEN"]
-      %>&name=Central&page=14&per_page=100&registered_address_in_full=S43%204PZ
+    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<OPENC_API_TOKEN>&name=Central&page=14&per_page=100&registered_address_in_full=S43%204PZ
     body:
       encoding: US-ASCII
       string: ''
@@ -7070,7 +7056,7 @@ http_interactions:
       X-Powered-By:
       - Phusion Passenger 4.0.59
       Date:
-      - Sat, 12 Sep 2015 20:05:44 GMT
+      - Sun, 20 Sep 2015 20:18:54 GMT
       Server:
       - nginx/1.6.1 + Phusion Passenger 4.0.52
       Access-Control-Allow-Origin:
@@ -7586,11 +7572,10 @@ http_interactions:
         7 NAPIER COURT GANDER LANE, BALBOURGH LINKS, CHESTERFIELD, DERBYSHIRE, ENGLAND,
         S43 4PZ"}}],"page":14,"per_page":100,"total_pages":16,"total_count":1599}}'
     http_version: 
-  recorded_at: Sat, 12 Sep 2015 20:05:44 GMT
+  recorded_at: Sun, 20 Sep 2015 20:18:54 GMT
 - request:
     method: get
-    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<%= ENV["OPENC_API_TOKEN"]
-      %>&name=Central&page=15&per_page=100&registered_address_in_full=S43%204PZ
+    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<OPENC_API_TOKEN>&name=Central&page=15&per_page=100&registered_address_in_full=S43%204PZ
     body:
       encoding: US-ASCII
       string: ''
@@ -7611,7 +7596,7 @@ http_interactions:
       X-Powered-By:
       - Phusion Passenger 4.0.58
       Date:
-      - Sat, 12 Sep 2015 20:05:45 GMT
+      - Sun, 20 Sep 2015 20:18:56 GMT
       Server:
       - nginx/1.6.1 + Phusion Passenger 4.0.52
       Access-Control-Allow-Origin:
@@ -8127,11 +8112,10 @@ http_interactions:
         7  NAPIER COURT GANDER LANE, BARLBOROUGH LINKS, CHESTERFIELD, DERBYSHIRE,
         ENGLAND, S43 4PZ"}}],"page":15,"per_page":100,"total_pages":16,"total_count":1599}}'
     http_version: 
-  recorded_at: Sat, 12 Sep 2015 20:05:45 GMT
+  recorded_at: Sun, 20 Sep 2015 20:18:56 GMT
 - request:
     method: get
-    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<%= ENV["OPENC_API_TOKEN"]
-      %>&name=Central&page=16&per_page=100&registered_address_in_full=S43%204PZ
+    uri: https://api.opencorporates.com/v0.4/companies/search?api_token=<OPENC_API_TOKEN>&name=Central&page=16&per_page=100&registered_address_in_full=S43%204PZ
     body:
       encoding: US-ASCII
       string: ''
@@ -8150,9 +8134,9 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Powered-By:
-      - Phusion Passenger 4.0.59
+      - Phusion Passenger 4.0.58
       Date:
-      - Sat, 12 Sep 2015 20:05:46 GMT
+      - Sun, 20 Sep 2015 20:18:57 GMT
       Server:
       - nginx/1.6.1 + Phusion Passenger 4.0.52
       Access-Control-Allow-Origin:
@@ -8663,5 +8647,5 @@ http_interactions:
         7 NAPIER COURT GANDER LANE, BALBOURGH LINKS, CHESTERFIELD, DERBYSHIRE, ENGLAND,
         S43 4PZ"}}],"page":16,"per_page":100,"total_pages":16,"total_count":1599}}'
     http_version: 
-  recorded_at: Sat, 12 Sep 2015 20:05:46 GMT
+  recorded_at: Sun, 20 Sep 2015 20:18:57 GMT
 recorded_with: VCR 2.9.3

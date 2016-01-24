@@ -1,16 +1,17 @@
+REDIS_CONFIG = {
+  'host' => "localhost",
+  'port' => "6379",
+  'namespace' => "ockapi",
+  'db' => 15
+}
+
+redis = Redis.new(:host => REDIS_CONFIG['host'], :port => REDIS_CONFIG['port'],
+                  :thread_safe => true, :db => REDIS_CONFIG['db'])
+$redis = Redis::Namespace.new(REDIS_CONFIG['namespace'], :redis => redis)
+
 module Ockapi
   class Base
-    REDIS_CONFIG = {
-      'host' => "localhost",
-      'port' => "6379",
-      'db' => 15
-    }
-
     def initialize
-      redis = Redis.new(:host => REDIS_CONFIG['host'], :port => REDIS_CONFIG['port'],
-                        :thread_safe => true, :db => REDIS_CONFIG['db'])
-      $redis = Redis::Namespace.new(REDIS_CONFIG['namespace'], :redis => redis)
-
       HTTParty::HTTPCache.logger = Logger.new(STDOUT)
       HTTParty::HTTPCache.redis = $redis
       HTTParty::HTTPCache.perform_caching = true

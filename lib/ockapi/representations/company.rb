@@ -38,6 +38,25 @@ module Ockapi
       end
     end
 
+    def add_to_corporate_grouping(corporate_grouping)
+      # POST https://opencorporates.com/corporate_grouping_memberships
+      # utf8:✓
+      # authenticity_token:VuKqVPzGIqUHXV6u+nUGNQ0TNxW+AoagCMvqNbnnTcY=
+      # corporate_grouping_name:ROYAL BLACKBURN HOSPITAL PFI
+      # company_number:04546254
+      # jurisdiction_code:gb
+      # commit:add silently
+      #
+      # POST https://opencorporates.com/corporate_grouping_memberships
+      # utf8:✓
+      # authenticity_token:VuKqVPzGIqUHXV6u+nUGNQ0TNxW+AoagCMvqNbnnTcY=
+      # corporate_grouping_name:ROYAL BLACKBURN HOSPITAL PFI
+      # corporate_grouping_wikipedia_id:https://en.wikipedia.org/wiki/East_Lancashire_Hospitals_NHS_Trust
+      # company_number:04546254
+      # jurisdiction_code:gb
+      # commit:add silently
+    end
+
     def full!
       return self if not officers.nil?
 
@@ -59,7 +78,7 @@ module Ockapi
     def latest_annual_return(complex=false)
       # Convenience method
       ar = filings.find {|x| x.title[/annual return/i] }
-      if ar.empty?
+      if Array(ar).empty?
         return nil
       else
         ar.get_companies_house_doc(complex)
